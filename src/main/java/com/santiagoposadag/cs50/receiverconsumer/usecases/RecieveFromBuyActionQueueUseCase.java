@@ -17,6 +17,7 @@ public class RecieveFromBuyActionQueueUseCase {
     }
 
     public void receiveMessage(String message){
+        System.out.println(message);
         BoughtCryptoCurrency crypto = gson.fromJson(message, BoughtCryptoCurrency.class);
         repository.save(crypto).subscribe();
     }
