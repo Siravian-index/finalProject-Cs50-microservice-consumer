@@ -119,12 +119,12 @@ public class CryptoCurrencyMappers {
 
     public Function<ClientEntity, ClientDTO> fromEntityToDTO(){
         return entity -> {
-            var dtoReturn = new ClientDTO();
-            dtoReturn.setDni(entity.getDni());
-            dtoReturn.setName(entity.getName());
-            dtoReturn.setPhone(entity.getPhone());
-            dtoReturn.setRoutingKey(entity.getRoutingKey());
-            return dtoReturn;
+            var dto = new ClientDTO();
+            dto.setDni(entity.getDni());
+            dto.setName(entity.getName());
+            dto.setPhone(entity.getPhone());
+            dto.setRoutingKey(entity.getRoutingKey());
+            return dto;
         };
     }
 }

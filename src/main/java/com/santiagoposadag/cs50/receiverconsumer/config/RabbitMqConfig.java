@@ -5,7 +5,7 @@ package com.santiagoposadag.cs50.receiverconsumer.config;
 
 
 import com.santiagoposadag.cs50.receiverconsumer.usecases.RecieveFromBuyActionQueueUseCase;
-import com.santiagoposadag.cs50.receiverconsumer.usecases.RecieveFromClientCreateQueue;
+import com.santiagoposadag.cs50.receiverconsumer.usecases.ReceiveFromClientCreateQueue;
 import com.santiagoposadag.cs50.receiverconsumer.usecases.RecieveFromGeneralActionQueueUseCase;
 import com.santiagoposadag.cs50.receiverconsumer.usecases.RecieveFromSellActionQueueUseCase;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -30,7 +30,7 @@ public class RabbitMqConfig {
     @Autowired
     RecieveFromSellActionQueueUseCase sellAction;
     @Autowired
-    RecieveFromClientCreateQueue clientAction;
+    ReceiveFromClientCreateQueue clientAction;
 
 
     @RabbitListener(queues = CLIENT_QUEUE)
@@ -38,7 +38,7 @@ public class RabbitMqConfig {
         clientAction.receiveMessage(received);
     }
     @RabbitListener(queues = {GENERAL_QUEUE})
-    public void listenerOfGenralActions(String received){
+    public void listenerOfGeneralActions(String received){
         generalAction.receiveMessage(received);
     }
 

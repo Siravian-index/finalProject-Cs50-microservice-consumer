@@ -6,11 +6,11 @@ import com.santiagoposadag.cs50.receiverconsumer.repository.ClientRepository;
 import org.springframework.stereotype.Component;
 
 @Component
-public class RecieveFromClientCreateQueue {
+public class ReceiveFromClientCreateQueue {
     private final Gson gson = new Gson();
     private final ClientRepository repository;
 
-    public RecieveFromClientCreateQueue(ClientRepository repository){
+    public ReceiveFromClientCreateQueue(ClientRepository repository){
         this.repository = repository;
     }
 
